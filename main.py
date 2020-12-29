@@ -1,16 +1,10 @@
-# This is a sample Python script.
+import matplotlib.pyplot as plt
+import pygal
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+x_values = list(range(1,1001))
+y_values = [ x**2 for x in x_values ]
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+plt.scatter(x_values, y_values, c=y_values, cmap=plt.cm.Blues,
+            edgecolor='none', s=100)
+plt.savefig('squares_plot.png', bbox_inches='tight')
+#plt.show()
