@@ -8,7 +8,7 @@ class RandomWalk():
         self.x_values = [0]
         self.y_values = [0]
 
-        self.colors = []
+        self.colors = [ ]
 
 
     def fill(self):
@@ -28,18 +28,20 @@ class RandomWalk():
 
     def paint(self):
 
-        gap = 4
+        self.colors = []
+
+        gap = 6
         points = zip(self.x_values, self.y_values)
-        for point in (self.x_values, self.y_values):
+        for point in zip(self.x_values, self.y_values):
             number = 0
-            print(point)
-            for pnt in (self.x_values, self.y_values):
-                print(pnt)
+            #print(point)
+            for pnt in zip(self.x_values, self.y_values):
+                #print(pnt)
                 number += int(abs(pnt[0] - point[0]) <= gap and abs(pnt[1] - point[1]) <= gap)
-            print('!!{}'.format(number))
+            #print('!!{}'.format(number))
             number -= 1
             self.colors.append(number)
-        print(self.colors)
+        #print(self.colors)
 
     def clear(self):
         self.x_values = [0]
